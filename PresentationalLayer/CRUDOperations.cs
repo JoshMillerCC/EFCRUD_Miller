@@ -224,8 +224,13 @@ namespace PresentationalLayer
                 {
                     Customer updater = c;
                     Console.WriteLine("Update: " + c.LastName + ", " + c.FirstName + "? Y/N");
-                    string yN = Console.ReadLine().ToLower();
-                    if (yN == "y")
+                    string yN = Console.ReadLine().ToUpper();
+                    while (yN != "Y" && yN != "N")
+                    {
+                        Console.WriteLine("Pick 'Y' or 'N'");
+                        yN = Console.ReadLine().ToUpper();
+                    }
+                    if (yN == "Y")
                     {
                         Console.WriteLine("Update first name? Y/N");
                         string fnyn = Console.ReadLine().ToUpper();
@@ -290,7 +295,7 @@ namespace PresentationalLayer
                         }
                         if (coyn == "Y")
                         {
-                            Console.WriteLine("What is the new city?");
+                            Console.WriteLine("What is the new country?");
                             string newCountry = Console.ReadLine();
                             if (newCountry.Equals(""))
                                 newCountry = null;

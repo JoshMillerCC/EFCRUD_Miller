@@ -16,29 +16,29 @@ namespace PresentationalLayer
                     //add new customer
                     Console.WriteLine("What is the customers first name?");
                     string firstName = Console.ReadLine();
-                    while(firstName.Equals(""))
+                    while(string.IsNullOrWhiteSpace(firstName))
                     { 
                         Console.WriteLine("First name cannot be empty.");
                         firstName = Console.ReadLine();
                     }
                     Console.WriteLine("What is the customers last name?");
                     string lastName = Console.ReadLine();
-                    while (lastName.Equals(""))
+                    while (string.IsNullOrWhiteSpace(lastName))
                     {
                         Console.WriteLine("Last name cannot be empty.");
                         lastName = Console.ReadLine();
                     }
                     Console.WriteLine("What city is the customer from?");
                     string city = Console.ReadLine();
-                    if(city.Equals(""))
+                    if(string.IsNullOrWhiteSpace(city))
                     { city = null; }
                     Console.WriteLine("What country is the customer from?");
                     string country = Console.ReadLine();
-                    if (country.Equals(""))
+                    if (string.IsNullOrWhiteSpace(country))
                     { country = null; }
                     Console.WriteLine("What is the customers phone number?");
                     string phone = Console.ReadLine();
-                    if (phone.Equals(""))
+                    if (string.IsNullOrWhiteSpace(phone))
                     { phone = null; }
 
                     CRUDOperations.addCustomer(firstName, lastName, city, country, phone);
